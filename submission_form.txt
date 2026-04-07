@@ -1,0 +1,8 @@
+Name: Yaseen Raihana
+Roll No: 727823TUAM062
+Experiment Name: SKCT_727823TUAM062_ProductDefectClassification
+Best Run ID: d94ba0e6e7b4465bae5a1bc1b2f8d1ca
+Best F1 Score: 0.9844910612215472
+Azure Run ID: -
+GitHub URL:
+Total Commits: 

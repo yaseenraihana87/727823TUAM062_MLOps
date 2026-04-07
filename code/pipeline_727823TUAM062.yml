@@ -1,0 +1,29 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+
+type: pipeline
+
+experiment_name: SKCT_727823TUAM062_pipeline
+
+jobs:
+
+  data_prep:
+    type: command
+    code: ./code
+    command: python data_prep.py
+    environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
+
+  train:
+    type: command
+    code: ./code
+    command: python train_pipeline.py
+    environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
+    depends_on:
+      - data_prep
+
+  evaluate:
+    type: command
+    code: ./code
+    command: python evaluate.py
+    environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
+    depends_on:
+      - train
